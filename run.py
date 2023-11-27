@@ -196,3 +196,41 @@ def play_game(size, num_ships, level, time_limit):
 
         if player_ships == 0 or computer_ships == 0:
             break
+
+# Determine the winner as before
+    if player_score > computer_score:
+        winner = "Player"
+    elif computer_score > player_score:
+        winner = "Computer"
+    else:
+        winner = "Nobody"  # It's a tie
+
+    print("Game over!")
+    print("Player score:", player_score)
+    print("Computer score:", computer_score)
+    print("Player hits:", player_hits)
+    print("Player misses:", player_misses)
+    print("Player remaining ships:", player_ships)
+    print("Computer hits:", computer_hits)
+    print("Computer misses:", computer_misses)
+    print("Computer remaining ships:", computer_ships)
+    print("Winner:", winner)
+
+    print("Game history:")
+    for move in game_history:
+        print(move[0], "guessed", move[1])
+        if move[0] == "Player":
+            if is_hit(move[1], computer_grid):
+                print("Player hit a ship!")
+            else:
+                print("Player missed!")
+        else:
+            if is_hit(move[1], player_grid):
+                print("Computer hit one of your ships!")
+            else:
+                print("Computer missed!")
+
+    play_again = input("Do you want to play again? (y/n): ")
+    if play_again.lower() != "y":
+        print("Thank you for playing Onyeami's Battleships game!")
+        return
