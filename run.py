@@ -100,6 +100,99 @@ def play_game(size, num_ships, level, time_limit):
             # Player's turn
             print("Player's turn:")
             start_time = time.time()
-            guess = input(
-                "Enter your guess(e.g., A1) or type 'status' to check status: "
-            ).upper()
+            guess = input("""Enter your guess(e.g., A1) or type 'status' to
+                         check status: """).upper()
+            # Check if the input is empty
+            while guess == '':
+                print("Input cannot be empty. Please try again.")
+                guess = input
+                ("""Enter your guess(e.g., A1) or type 'status' to
+                check status: """).upper()
+
+            if guess == 'STATUS':
+                display_game_status(
+                    player_hits, player_misses, player_ships, computer_hits,
+                    computer_misses, computer_ships
+                )
+                continue
+
+            # Check if the input is valid
+            if len(guess) < 2 or not guess[0].isalpha() or not guess[1:].isdigit():
+                print("Invalid input. Please enter a letter followed by a number (e.g., A1).")
+                continue
+
+            guess_col = ord(guess[0]) - ord('A')
+            guess_row = int(guess[1:]) - 1
+            guess_coords = (guess_row, guess_col)
+
+            if not is_valid_guess(guess_coords, size):
+                print("Invalid guess. Try again.")
+                continue
+            elapsed_time = time.time() - start_time
+
+            if elapsed_time > time_limit:
+                print("Time's up! It's the computer's turn now.")
+            else:
+                if guess_coords in player_guessed_cells:
+                    print("You already guessed that cell. Try again.")
+                    continue
+
+                player_guessed_cells.add(guess_coords)
+                game_history.append(("Player", guess_coords))
+
+                if is_hit(guess_coords, computer_grid):
+                    print("You hit a ship!")
+                    player_score += 1
+                    player_hits += 1
+                    computer_ships -= 1
+                    computer_grid[guess_row][guess_col] = 'x'
+                else:
+                    print("You missed!")
+                    player_misses += 1
+                    player_grid[guess_row][guess_col] = 'x'
+
+                turns += 1
+                print("Computer's grid:")
+                print_grid(computer_grid)
+
+                if player_ships == 0 or computer_ships == 0:
+                    break
+
+        # Computer's turn
+        print("Computer's turn:")
+        start_time = time.time()
+
+        # Add a delay for suspense
+        time.sleep(1)
+
+        guess_coords = computer_guess(size, computer_guessed_cells)
+
+        elapsed_time = time.time() - start_time
+
+        if elapsed_time > time_limit:
+            print("Time's up! Your turn again.")
+            continue
+
+        if guess_coords in computer_guessed_cells:
+            continue
+
+        computer_guessed_cells.add(guess_coords)
+        game_history.append(("Computer", guess_coords))
+
+        if is_hit(guess_coords, player_grid):
+            print("Computer hit one of your ships!")
+            computer_score += 1
+            computer_hits += 1
+            player_ships -= 1
+            player_grid[guess_coords[0]][guess_coords[1]] = 'x'
+        else:
+            print("Computer missed!")
+            computer_misses += 1
+            player_grid[guess_coords[0]][guess_coords[1]] = 'o'
+
+        turns += 1
+        print("Your grid:")
+        print_grid(player_grid)
+
+        if player_ships == 0 or computer_ships == 0:
+            break
