@@ -2,9 +2,8 @@
 import random
 import time
 
+
 # Function to create a grid of given size filled with 'o'
-
-
 def create_grid(size):
     return [['o'] * size for _ in range(size)]
 
@@ -18,3 +17,22 @@ def print_grid(grid):
         # Print each row with row number
         print(str(i+1).rjust(2) + "|" + " ".join(grid[i]) + "|")
         print("-" * (2*size+5))  # Print line separator
+
+
+# Function to place a given number of ships ('s') randomly in the grid
+def place_ships(grid, num_ships):
+    size = len(grid)
+    max_ships = size * size - 2  # Maximum number of ships allowed
+
+    if num_ships > max_ships:
+        print("Invalid number of ships! Maximum allowed ships:", max_ships)
+        return
+
+    for _ in range(num_ships):
+        ship_row = random.randint(0, size - 1)
+        ship_col = random.randint(0, size - 1)
+        # Ensure not to place a ship on top of another
+        while grid[ship_row][ship_col] == 's':
+            ship_row = random.randint(0, size - 1)
+            ship_col = random.randint(0, size - 1)
+        grid[ship_row][ship_col] = 's'  # Place the ship
