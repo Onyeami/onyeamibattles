@@ -65,3 +65,41 @@ def check_ship_hit(guess, grid):
     row, col = guess
     return grid[row][col] == 's'
 
+
+# Function to play the game
+def play_game(size, num_ships, level, time_limit):
+    size = get_user_input("Enter the grid size: ", type_=int, min_=2)
+
+    num_ships = get_user_input(
+        "Enter the number of ships: ",  type_=int, min_=1, max_=size * size
+    )
+    player_score = 0  # Initialize player's score
+    computer_score = 0  # Initialize computer's score
+    player_grid = create_grid(size)  # Create the player's game grid
+    computer_grid = create_grid(size)  # Create the computer's game grid
+    place_ships(player_grid, num_ships)  # Place the player's ships
+    place_ships(computer_grid, num_ships)  # Place the computer's ships
+    print("Welcome to Onyeami's Battleships game!")  # Welcome message
+    print("Try to sink all the ships.")  # Game instructions
+    print("Your grid:")
+    print_grid(player_grid)  # Print the initial game state
+    turns = 0  # Initialize turn counter
+    player_guessed_cells = set()  # Keep track of player's guessed cells
+    computer_guessed_cells = set()  # Keep track of computer's guessed cells
+    player_hits = 0
+    player_misses = 0
+    computer_hits = 0
+    computer_misses = 0
+    player_ships = num_ships
+    computer_ships = num_ships
+    game_history = []
+    in_game_menu = False  # Flag to indicate whether in-game menu is active
+
+    while True:  # Game loop
+        if not in_game_menu:
+            # Player's turn
+            print("Player's turn:")
+            start_time = time.time()
+            guess = input(
+                "Enter your guess(e.g., A1) or type 'status' to check status: "
+            ).upper()
