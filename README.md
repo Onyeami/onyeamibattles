@@ -1,32 +1,43 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+## **Welcome to Onyeami's Battleships game!**
 
-Welcome,
+Here is the live link - [Onyeami Battleships game](https://onyeami-battleships-a7717c6967d2.herokuapp.com/)
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+![ScreenShot](images/readme/mockup1.png)
 
-## Reminders
+(Developer: Charles Onye)
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+## Introduction
+This is Onyeami's Battleships Game. This is an exciting game of naval warfare, you will be the captain that will command and
+strategically deploy your ships, and engage in thrilling battles on the high seas. Let's do it. This game is designed to be played 
+on grids. It is a Python command-line project.
 
-## Creating the Heroku app
+## Table of Contents
+ - [Introduction](#introduction)
+ - [Table of Contents](#table-of-contents)
+ - [Project Objectives](#project-objectives)
+ - [User Experience](#user-experience)
+ - [Design](#design)
+ - [Technologies](#technologies-used)
+ - [Features](#features)
+ - [Testing](#testing)
+ - [Deployment](#deployment)
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+ ## Project Objectives
+  The objective of Onyeami's Battleships game is to defeat your opponent by sinking all their ships before 
+  they sink yours. The game is typically played on a grid. The specific objectives in the game are as follows:
 
-1. `heroku/python`
-2. `heroku/nodejs`
+ **Strategically Position Your Fleet**: Before the game begins, each player must position their ships on their grid without the opponent seeing.
+   This step is crucial as it sets the stage for the entire game. Players must consider the size and shape of 
+   their ships and deploy them in a way that makes them challenging for the opponent to locate and sink.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+ **Take Turns to Attack**: Players take turns firing shots at the opponent's grid. The objective is to guess the coordinates where the 
+   opponent's ships are located. If a shot lands on a square occupied by an enemy ship, it's a "hit." 
+   If it lands in an empty square, it's a "miss."
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
----
-
-Happy coding!
+ **Sink the Opponent's Ships**: The primary goal is to sink all of the opponent's ships. Ships are sunk when every square they occupy has been hit. 
+   
+ **Win the Game**: The first player to sink all of the opponent's ships wins the game. They are declared the victor, and the game concludes.
+   
+## User Experience
+The core objective remains the same: strategically position your ships, take turns to attack your opponent's grid, and sink
+their ships before they sink yours.
