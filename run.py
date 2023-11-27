@@ -234,3 +234,17 @@ def play_game(size, num_ships, level, time_limit):
     if play_again.lower() != "y":
         print("Thank you for playing Onyeami's Battleships game!")
         return
+
+
+# Function to display the status
+def display_game_status(
+        player_hits, player_misses, player_ships, computer_hits,
+        computer_misses, computer_ships
+     ):
+    print("Current Game Status:")
+    print("Player Hits:", player_hits)
+    print("Player Misses:", player_misses)
+    print("Player Remaining Ships:", player_ships)
+    print("Computer Hits:", computer_hits)
+    print("Computer Misses:", computer_misses)
+    print("Computer Remaining Ships:", computer_ships)
