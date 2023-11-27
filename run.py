@@ -100,8 +100,9 @@ def play_game(size, num_ships, level, time_limit):
             # Player's turn
             print("Player's turn:")
             start_time = time.time()
-            guess = input("""Enter your guess(e.g., A1) or type 'status' to
-                         check status: """).upper()
+            guess = input(
+                "Enter your guess(e.g., A1) or type 'status' to check status: "
+            ).upper()
             # Check if the input is empty
             while guess == '':
                 print("Input cannot be empty. Please try again.")
@@ -117,8 +118,13 @@ def play_game(size, num_ships, level, time_limit):
                 continue
 
             # Check if the input is valid
-            if len(guess) < 2 or not guess[0].isalpha() or not guess[1:].isdigit():
-                print("Invalid input. Please enter a letter followed by a number (e.g., A1).")
+            if (
+                len(guess) < 2
+                or not guess[0].isalpha()
+                or not guess[1:].isdigit()
+            ):
+                print("Invalid input. Please enter a letter followed by a "
+                      "number (e.g., A1).")
                 continue
 
             guess_col = ord(guess[0]) - ord('A')
@@ -272,6 +278,7 @@ def main():
             print("Thank you for playing Onyeami's Battleships game!")
             break
 
+
 # Function to create the main menu
 def main_menu():
     print("1. Start Game")
@@ -316,6 +323,7 @@ def get_user_input(prompt, type_=None, min_=None, max_=None, range_=None):
                     print(template.format(" or ".join(map(str, range_))))
         else:
             return ui
+
 
 def main():
     size = 5  # Default grid size
