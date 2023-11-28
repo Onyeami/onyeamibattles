@@ -143,51 +143,51 @@ There were no errors
 Manual Testing were performed mainly
 
 
-| Test Case    |      Description       |       Steps                    |        Expected Results       |  Pass/Fail  |           Images                 |
-| -------------|----------------------- | -------------------------------|-------------------------------|-------------|----------------------------------|
-|1. New Game   | Verify that a new game | i. Run the main function.      | A new game starts, and the    |  Pass       |                                  |
-|              | can be started.        | ii. Choose to start a new game | player's and computer's grids |             |                                  |
-|              |                        | iii. Enter Board Size          | are populated with ships      |             |                                  |
-|              |                        | iv. Enter Ships Size           |                               |             |                                  |
-|              |                        |                                |                               |             |                                  |
-|2. Game Board | Verify that the game   | i. Run the main function.      | The player's and computer's   |  Pass       |                                  |
-|              | board is populated     | ii. Choose to start a new game.| grids are populated with ships|             |                                  |
-|              | randomly with ships.   | iii. Enter Board Size          | at random locations.          |             |                                  |
-|              |                        | iv. Enter Ships Size           |                               |             |                                  |
-|              |                        |                                |                               |             |                                  | 
-|3. Player's   | Verify that each player| i. Run the main function.      | The player and the computer   |  Pass       |                                  |
-|   Ships      | gets their own set of  | ii. Choose to start a new game.| each has their own set of     |             |                                  |
-|              | ships.                 | iii. Enter Board Size          | ships.                        |             |                                  |
-|              |                        | iv. Enter Ships Size           |                               |             |                                  |
-|              |                        |                                |                               |             |                                  |
-|4. Valid      | Verify that a user can | i. Run the main function.      | The guess is treated as valid |  Pass       |                                  |
-|   Guess      | make a valid guess.    | ii. Choose to start a new game.|                               |             |                                  |
-|              |                        | iii. Make a valid guess        |                               |             |                                  |
-|              |                        |                                |                               |             |                                  |
-|5. Invalid    | Verify that a program  | i. Run the main function.      | Show an error message.        |  Pass       |                                  |
-|   Guess      | should show an error   | ii. Choose to start a new game.|                               |             |                                  |
-|              | message for invalid    | iii. Make an invalid guess.    |                               |             |                                  |
-|              | guess.                 |                                |                               |             |                                  |
-|              |                        |                                |                               |             |                                  |
-|6. Correct    | Verify that a ship can | i. Run the man function.       | The ship is revealed if the   |  Pass       |                                  |
-|   Guess      | be sunk by making a    | ii. Choose to start a new game | guess is a hit.               |             |                                  |
-|              | valid guess.           | iii. Make a guess that hit a   |                               |             |                                  |  
-|              |                        |      ship
+| Test Case       |      Description       |       Steps                    |        Expected Results       |  Pass/Fail  |           Images                 |
+| ----------------|----------------------- | -------------------------------|-------------------------------|-------------|----------------------------------|
+|1. New Game      | Verify that a new game | i. Run the main function.      | A new game starts, and the    |  Pass       |                                  |
+|                 | can be started.        | ii. Choose to start a new game | player's and computer's grids |             |                                  |
+|                 |                        | iii. Enter Board Size          | are populated with ships      |             |                                  |
+|                 |                        | iv. Enter Ships Size           |                               |             |                                  |
+|                 |                        |                                |                               |             |                                  |
+|2. Game Board    | Verify that the game   | i. Run the main function.      | The player's and computer's   |  Pass       |                                  |
+|                 | board is populated     | ii. Choose to start a new game.| grids are populated with ships|             |                                  |
+|                 | randomly with ships.   | iii. Enter Board Size          | at random locations.          |             |                                  |
+|                 |                        |iv. Enter Ships Size            |                               |             |                                  |
+|                 |                        |                                |                               |             |                                  | 
+|3. Player's Ships| Verify that each player|i. Run the main function.       | The player and the computer   |  Pass       |                                  |
+|                 | gets their own set of  |ii. Choose to start a new game. | each has their own set of     |             |                                  |
+|                 | ships.                 |iii. Enter Board Size           | ships.                        |             |                                  |
+|                 |                        |iv. Enter Ships Size            |                               |             |                                  |
+|                 |                        |                                |                               |             |                                  |
+|4. Valid Guess   | Verify that a user can |i. Run the main function.       | The guess is treated as valid |  Pass       |                                  |
+|                 |  make a valid guess.   |ii. Choose to start a new game. |                               |             |                                  |
+|                 |                        |iii. Make a valid guess         |                               |             |                                  |
+|                 |                        |                                |                               |             |                                  |
+|5. Invalid Guess | Verify that a program  |i. Run the main function.       | Show an error message.        |  Pass       |                                  |
+|                 | should show an error   |ii. Choose to start a new game. |                               |             |                                  |
+|                 | message for invalid    |iii. Make an invalid guess.     |                               |             |                                  |
+|                 | guess.                 |                                |                               |             |                                  |
+|                 |                        |                                |                               |             |                                  |
+|6. Correct Guess | Verify that a ship can |i. Run the man function.        | The ship is revealed if the   |  Pass       |                                  |
+|                 | be sunk by making a    |ii. Choose to start a new game  | guess is a hit.               |             |                                  |
+|                 | valid guess.           |iii. Make a guess that hits a   |                               |             |                                  |  
+|                 |                        |    ship                        |                               |             |                                  |
+|                 |                        |                                |                               |             |                                  |
+|7. Sunk Ship     | Verify that the game   |i. Run the main function.       | The game counts the sunk ship |  Pass       |                                  |
+|                 | counts the sunk ship   |ii. Choose to start a new game  | towards the loss of the game. |             |                                  |
+|                 | towards the loss of the|iii. Make a valid guess that    |                               |             |                                  |
+|                 | game.                  |    hits a ship.                |                               |             |                                  |
+|                 |                        |                                |                               |             |                                  |
+|8. Game End      | Verify that the game   |i. Run the main function.       | The game ends when the player |  Pass       |                                  |
+|                 | ends when a player     |ii. Choose to start a new game. | loses all their ships         |             |                                  |
+|                 | loses all their ships  |iii. Make valid guesses that hit|                               |             |                                  |
+|                 |                        |                                |                               |             |                                  |
+|9. Winner        | Verify that the game   |i. Run the main function.       | The game ends when the player |  Pass       |                                  |
+|                 | ends when a player has |ii. Choose to start a new game  | has sunk all the other        |             |                                  |
+|                 | sunk all the ships of  |iii. Make valid guesses that hit| player's ships.               |             |                                  |
+|                 | the other player.      |   all the other player's ships |                               |             |                                  |
 
-
-
-
-- Testing when a player makes a invalid guess
-
-![Invalid guess](images/testing/invalid-input.png)
-
-- Testing when a player wastes timing in guessing
-
-![Time Up](images/testing/testing-timing.png)
-
-- Testing when a player chose coordinates outside the grid
-
-![Grid](images/testing/testing-grid.png)
 
 ## Deployment
 git add:
