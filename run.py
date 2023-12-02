@@ -107,7 +107,7 @@ def play_game(size, num_ships, level, time_limit):
             while guess == '':
                 print("Input cannot be empty. Please try again.")
                 guess = input(
-                "Enter your guess(e.g., A1) or type 'status' to check status: "
+                 "Enter a guess(e.g., A1) or type 'status' to check status: "
                 ).upper()
 
             if guess == 'STATUS':
