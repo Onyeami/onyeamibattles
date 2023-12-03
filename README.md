@@ -1,6 +1,6 @@
 ## **Welcome to Onyeami's Battleships game!**
 
-Here is the live link - [Onyeami Battleships game](https://onyeami-battleships-a7717c6967d2.herokuapp.com/)
+Here is the live link - [Onyeami Battleships game](https://onyeamibattles-bde2fbfa9974.herokuapp.com/)
 
 ![ScreenShot](images/readme/mockup1.png)
 
